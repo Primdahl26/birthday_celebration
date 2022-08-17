@@ -68,7 +68,7 @@
 	let updateCountInterval = setInterval(updateCountDownNumber, 1000)
 </script>
 
-<div class="relative card w-96 bg-neutral shadow-xl">
+<div class="relative card w-96 h-auto bg-neutral shadow-xl">
 	<figure
 		use:inview={{}}
 		on:change={(event) => {
@@ -115,7 +115,7 @@
 			/></svg
 		>
 		<img
-			class="h-[36rem] w-96 object-cover"
+			class="h-96 w-96 object-cover"
 			src={images[imageNumber].img}
 			alt={images[imageNumber].title}
 		/>
