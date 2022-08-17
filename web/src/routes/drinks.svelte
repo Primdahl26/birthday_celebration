@@ -32,7 +32,7 @@
 	</div>
 </div>
 
-<div class="flex justify-center pt-3">
+<div class="flex justify-center py-3">
 	<div class="grid h-fit w-96 card bg-neutral rounded-box place-items-center p-5">
 		<input
 			type="text"

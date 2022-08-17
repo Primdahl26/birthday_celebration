@@ -4,7 +4,7 @@
 
 <div class="navbar bg-neutral">
 	<div class="flex-1">
-		<a class="btn btn-ghost normal-case text-xl" href="/">60 års</a>
+		<a class="btn btn-ghost normal-case text-xl" href="/">60 års 🎉</a>
 	</div>
 	<div class="flex-none">
 		<div class="navbar-end">
