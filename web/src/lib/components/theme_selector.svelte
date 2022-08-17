@@ -1,0 +1,82 @@
+<script lang="ts">
+	import { themeChange } from 'theme-change'
+	import { onMount } from 'svelte'
+	import { chosenTheme } from '../stores/theme.js'
+
+	const themes = [
+		{ icon: '🌚', value: 'dark' },
+		{ icon: '🌙', value: 'night' },
+		{ icon: '🧛', value: 'dracula' },
+		{ icon: '🌸', value: 'pastel' },
+		{ icon: '⚫', value: 'black' },
+		{ icon: '💼', value: 'business' },
+		{ icon: '💎', value: 'luxury' },
+		{ icon: '🕰️', value: 'retro' },
+		{ icon: '🐟', value: 'aqua' },
+		{ icon: '🔌', value: 'wireframe' }
+	]
+
+	let isDropdownOpen = false
+
+	const handleDropdownClick = () => {
+		isDropdownOpen = !isDropdownOpen
+	}
+
+	const handleDropdownFocusLost = ({ relatedTarget, currentTarget }) => {
+		if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return
+		isDropdownOpen = false
+	}
+
+	onMount(() => {
+		themeChange(false)
+	})
+</script>
+
+<div class="dropdown dropdown-end" on:focusout={handleDropdownFocusLost}>
+	<div tabindex="0" class="btn btn-ghost btn-sm rounded-btn text-xl" on:click={handleDropdownClick}>
+		{#if isDropdownOpen}
+			<svg
+				class="swap-on fill-current"
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 512 512"
+				><polygon
+					points="400 145.49 366.51 112 256 222.51 145.9 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49"
+				/></svg
+			>
+		{:else}
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 512 512"
+				width="24"
+				height="24"
+				fill="currentColor"
+				><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
+					d="M512 255.1C512 256.9 511.1 257.8 511.1 258.7C511.6 295.2 478.4 319.1 441.9 319.1H344C317.5 319.1 296 341.5 296 368C296 371.4 296.4 374.7 297 377.9C299.2 388.1 303.5 397.1 307.9 407.8C313.9 421.6 320 435.3 320 449.8C320 481.7 298.4 510.5 266.6 511.8C263.1 511.9 259.5 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256V255.1zM96 255.1C78.33 255.1 64 270.3 64 287.1C64 305.7 78.33 319.1 96 319.1C113.7 319.1 128 305.7 128 287.1C128 270.3 113.7 255.1 96 255.1zM128 191.1C145.7 191.1 160 177.7 160 159.1C160 142.3 145.7 127.1 128 127.1C110.3 127.1 96 142.3 96 159.1C96 177.7 110.3 191.1 128 191.1zM256 63.1C238.3 63.1 224 78.33 224 95.1C224 113.7 238.3 127.1 256 127.1C273.7 127.1 288 113.7 288 95.1C288 78.33 273.7 63.1 256 63.1zM384 191.1C401.7 191.1 416 177.7 416 159.1C416 142.3 401.7 127.1 384 127.1C366.3 127.1 352 142.3 352 159.1C352 177.7 366.3 191.1 384 191.1z"
+				/></svg
+			>
+		{/if}
+	</div>
+	<ul
+		tabindex="0"
+		class="p-2 shadow menu dropdown-content bg-neutral rounded-box w-52"
+		style:visibility={isDropdownOpen ? 'visible' : 'hidden'}
+	>
+		{#each themes as theme}
+			<li
+				data-set-theme={theme.value}
+				data-act-class="ACTIVECLASS"
+				on:click={() => ($chosenTheme = theme.value)}
+			>
+				{#if $chosenTheme == theme.value}
+					<a class="bg-primary hover:bg-primary" href="">
+						<p class="text-primary-content">{theme.icon} {theme.value}</p>
+					</a>
+				{:else}
+					<a href="">{theme.icon} {theme.value}</a>
+				{/if}
+			</li>
+		{/each}
+	</ul>
+</div>
