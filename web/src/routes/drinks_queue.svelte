@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>2x 60 års! - Drinks bestillinger 🍺🍹</title>
+</svelte:head>
+
 <div class="overflow-x-auto shadow-lg pt-5">
 	<table class="table table-zebra w-full">
 		<!-- head -->

@@ -12,6 +12,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>2x 60 års! - Bestil drinks 🍺🍹</title>
+</svelte:head>
+
 <div class="flex justify-center pt-3">
 	<div class="grid h-72 w-96 card bg-neutral rounded-box place-items-center">
 		<span class="text-xl py-2"><b>Bestil din drink her!</b></span>

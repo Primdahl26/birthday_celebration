@@ -233,6 +233,10 @@
 	]
 </script>
 
+<svelte:head>
+	<title>Søren og Connie 60 år! 🎉🎉</title>
+</svelte:head>
+
 <div class="flex justify-center pt-3">
 	<div class="grid h-20 w-96 card bg-neutral rounded-box place-items-center">
 		<span class="text-xl pt-2"><b>Tillykke Søren og Connie!</b></span>
