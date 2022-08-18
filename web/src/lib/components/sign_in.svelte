@@ -2,7 +2,7 @@
 	import { fade } from 'svelte/transition'
 	import PocketBase from 'pocketbase'
 
-	const client = new PocketBase('https://94.130.183.89')
+	const client = new PocketBase('https://api.sorenogconnie60.dk')
 	export let authendicated = client.authStore.isValid
 	let failed = undefined
 	let email: string
@@ -88,7 +88,7 @@
 							</div>
 							<div class="flex-none">
 								<button
-									on:click={() => {
+									on:click|preventDefault={() => {
 										failed = false
 									}}
 									class="btn btn-sm">ok</button

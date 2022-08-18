@@ -3,7 +3,7 @@
 	import PocketBase from 'pocketbase'
 	import SignIn from '$lib/components/sign_in.svelte'
 
-	const client = new PocketBase('https://94.130.183.89')
+	const client = new PocketBase('https://api.sorenogconnie60.dk')
 	let orders = []
 	let authendicated: boolean
 
