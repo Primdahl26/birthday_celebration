@@ -54,7 +54,7 @@
 		},
 		{
 			title: 'Ældre dage',
-			description: 'Der tænkes tilbage til hvordan de ældre dage.',
+			description: 'En to tre pose! Søren underer sig over hvorfor billedet aldrig bliver taget.',
 			img: '/images/both/IMG_9272.JPG'
 		}
 	]
@@ -170,13 +170,24 @@
 		},
 		{
 			title: 'Street Søren',
-			description: 'Der er blevet groet noget hår siden sidst han havde kastten på.',
+			description: 'Der er blevet groet noget hår siden sidst han havde kasketten på.',
 			img: '/images/soren/IMG_8600.JPG'
 		},
 		{
 			title: 'Ehmm 😳',
 			description: 'Jeg ved ikke lige hvad der sker her... Mit bud er ligeså godt som dit.',
 			img: '/images/soren/IMG_9269.JPG'
+		},
+		{
+			title: 'Den elektriske stol',
+			description:
+				'Søren får stød i den elektriske stol. Nogle vil mene det bare er håndtagene der vibrerer...',
+			img: '/images/soren/IMG_9998.JPG'
+		},
+		{
+			title: 'Soldater Søren',
+			description: 'Søren har den sorte kriger baret på. Selvfølgelig med solen fra livgarden.',
+			img: '/images/soren/IMG_9999.JPG'
 		}
 	]
 	let connieImages = [
@@ -192,7 +203,7 @@
 		},
 		{
 			title: 'Trofaste Noah',
-			description: 'Trofaste Noash slår til igen! Altid klar til kærlighed på sofaen.',
+			description: 'Trofaste Noah slår til igen! Altid klar til kærlighed på sofaen.',
 			img: '/images/connie/IMG_0727.JPG'
 		},
 		{
@@ -229,6 +240,16 @@
 			title: 'Gasset',
 			description: 'Connie er nok vandt til at blive gasset derhjemme, men ikke mens hun sover!',
 			img: '/images/connie/IMG_9911.JPG'
+		},
+		{
+			title: 'Soldater Connie',
+			description: 'Connie har den sorte kriger baret på. Selvfølgelig med solen fra livgarden.',
+			img: '/images/connie/IMG_9998.JPG'
+		},
+		{
+			title: 'Numero uno',
+			description: 'Connie har vundet! Vi ved ikke helt hvad, men det er også ligegyldigt!',
+			img: '/images/connie/IMG_9999.JPG'
 		}
 	]
 </script>
