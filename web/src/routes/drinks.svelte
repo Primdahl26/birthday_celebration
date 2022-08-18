@@ -2,7 +2,7 @@
 	import PocketBase from 'pocketbase'
 	import { fade } from 'svelte/transition'
 
-	const client = new PocketBase('http://94.130.183.89')
+	const client = new PocketBase('https://94.130.183.89')
 	const drinks = ['Rom & Cola', 'Mojito', 'Gin & Tonic', 'Moscow Mule', 'Dark & Stormy', 'Fadøl']
 
 	let record = undefined

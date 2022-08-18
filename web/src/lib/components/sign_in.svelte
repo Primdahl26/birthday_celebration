@@ -2,7 +2,7 @@
 	import { fade } from 'svelte/transition'
 	import PocketBase from 'pocketbase'
 
-	const client = new PocketBase('http://94.130.183.89')
+	const client = new PocketBase('https://94.130.183.89')
 	export let authendicated = client.authStore.isValid
 	let failed = undefined
 	let email: string
