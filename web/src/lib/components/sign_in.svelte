@@ -69,33 +69,6 @@
 						</label>
 					</div>
 
-					{#if failed}
-						<div transition:fade class="alert alert-error flex-row w-80 shadow-lg">
-							<div>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									class="stroke-current flex-shrink-0 h-6 w-6"
-									fill="none"
-									viewBox="0 0 24 24"
-									><path
-										stroke-linecap="round"
-										stroke-linejoin="round"
-										stroke-width="2"
-										d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-									/></svg
-								>
-								<span>Forkert login</span>
-							</div>
-							<div class="flex-none">
-								<button
-									on:click|preventDefault={() => {
-										failed = false
-									}}
-									class="btn btn-sm">ok</button
-								>
-							</div>
-						</div>
-					{/if}
 					<div class="form-control mt-6">
 						{#if email && password}
 							{#if loading}
@@ -105,7 +78,6 @@
 									on:click={async () => {
 										await adminSignIn(email, password)
 										authendicated = client.authStore.isValid
-										console.log(client.authStore)
 										loading = false
 									}}
 									class="btn btn-primary">Login</button
@@ -117,6 +89,36 @@
 					</div>
 				</form>
 			</div>
+			{#if failed}
+				<div
+					transition:fade
+					class="alert alert-error absolute bottom-5 left-1/2 -translate-x-1/2 w-max flex-row shadow-lg"
+				>
+					<div>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="stroke-current flex-shrink-0 h-6 w-6"
+							fill="none"
+							viewBox="0 0 24 24"
+							><path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+							/></svg
+						>
+						<span>Forkert login</span>
+					</div>
+					<div class="flex-none">
+						<button
+							on:click|preventDefault={() => {
+								failed = false
+							}}
+							class="btn btn-sm">ok</button
+						>
+					</div>
+				</div>
+			{/if}
 		</div>
 	</div>
 </div>

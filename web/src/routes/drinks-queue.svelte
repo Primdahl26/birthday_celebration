@@ -8,7 +8,6 @@
 	let authendicated: boolean
 
 	const getOrders = async () => {
-		console.log('i was called')
 		orders = await client.records.getFullList('drinks', 200 /* batch size */, {
 			sort: 'created'
 		})
