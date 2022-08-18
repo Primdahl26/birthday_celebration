@@ -1,7 +1,15 @@
 <script lang="ts">
+	import PocketBase from 'pocketbase'
+	import { fade } from 'svelte/transition'
+
+	const client = new PocketBase('http://94.130.183.89')
 	const drinks = ['Rom & Cola', 'Mojito', 'Gin & Tonic', 'Moscow Mule', 'Dark & Stormy', 'Fadøl']
 
+	let record = undefined
 	let chosenDrink: string
+	let name: string
+	let complete: bool
+	let loading: bool
 
 	const randomDrink = () => {
 		let random = drinks.sort(() => 0.5 - Math.random())[0]
@@ -10,6 +18,16 @@
 		}
 		chosenDrink = random
 	}
+
+	const createDrink = async () => {
+		record = await client.records.create('drinks', {
+			name: name,
+			drink_type: chosenDrink
+		})
+		complete = true
+		chosenDrink = 'Vælg din drink'
+		loading = false
+	}
 </script>
 
 <svelte:head>
@@ -17,7 +35,7 @@
 </svelte:head>
 
 <div class="flex justify-center pt-3">
-	<div class="grid h-72 w-96 card bg-neutral rounded-box place-items-center">
+	<div class="h-72 w-96 card bg-neutral rounded-box place-items-center">
 		<span class="text-xl py-2"><b>Bestil din drink her!</b></span>
 		<div style="width:100%;height:0;padding-bottom:75%;position:relative;">
 			<iframe
@@ -35,6 +53,7 @@
 <div class="flex justify-center py-3">
 	<div class="grid h-fit w-96 card bg-neutral rounded-box place-items-center p-5">
 		<input
+			bind:value={name}
 			type="text"
 			placeholder="Indtast dit navn her"
 			class="input input-bordered w-full mb-2"
@@ -46,7 +65,7 @@
 					<option>{drink}</option>
 				{/each}
 			</select>
-			<button on:click={randomDrink} class="btn btn-primary btn-square ml-1 mb-2">
+			<button on:click={randomDrink} class="btn btn-primary btn-square ml-2 mb-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					width="24"
@@ -59,6 +78,46 @@
 				>
 			</button>
 		</div>
-		<button class="btn btn-primary">Bestil </button>
+		{#if name && chosenDrink != 'Vælg din drink'}
+			<button
+				on:click={() => {
+					loading = true
+					createDrink()
+					loading = false
+				}}
+				class="btn btn-primary pt-1">Bestil</button
+			>
+		{:else if loading}
+			<button class="btn loading">loading</button>
+		{:else}
+			<button class="btn pt-1" disabled="disabled">Indtast navn og vælg drink</button>
+		{/if}
+		{#if complete}
+			<div transition:fade class="alert alert-success absolute bottom-3 w-80 shadow-lg">
+				<div>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="stroke-current flex-shrink-0 h-6 w-6"
+						fill="none"
+						viewBox="0 0 24 24"
+						><path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+						/></svg
+					>
+					<span>Bestilling gennemført!</span>
+				</div>
+				<div class="flex-none">
+					<button
+						on:click={() => {
+							complete = false
+						}}
+						class="btn btn-sm">ok</button
+					>
+				</div>
+			</div>
+		{/if}
 	</div>
 </div>

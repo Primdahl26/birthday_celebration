@@ -1545,6 +1545,11 @@ playwright-core@1.25.0:
   resolved "https://registry.npmjs.org/playwright-core/-/playwright-core-1.25.0.tgz"
   integrity sha512-kZ3Jwaf3wlu0GgU0nB8UMQ+mXFTqBIFz9h1svTlNduNKjnbPXFxw7mJanLVjqxHJRn62uBfmgBj93YHidk2N5Q==
 
+pocketbase@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/pocketbase/-/pocketbase-0.4.1.tgz#4f95ce59e3fbe0b8ceb8ab8993398a3456e066a2"
+  integrity sha512-aDuN8ySDTRnY6P+jcNcOpb72yHojcdzSzU+3hDiXWxbERYDZP1+drVb9OEufFzbIlMaG7fhcth5ejdEK6sRELA==
+
 postcss-import@^14.1.0:
   version "14.1.0"
   resolved "https://registry.npmjs.org/postcss-import/-/postcss-import-14.1.0.tgz"
