@@ -13,7 +13,7 @@
 	const adminSignIn = async (email: string, password: string) => {
 		loading = true
 		try {
-			return await client.admins.authViaEmail(email, password)
+			return await client.admins.authViaEmail(email.toLowerCase(), password)
 		} catch (error) {
 			failed = true
 			loading = false
