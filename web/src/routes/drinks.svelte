@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition'
 
 	const client = new PocketBase('https://api.sorenogconnie60.dk')
-	const drinks = ['Rom & Cola', 'Mojito', 'Gin & Tonic', 'Moscow Mule', 'Dark & Stormy', 'Fadøl']
+	const drinks = ['Rom & Cola', 'Mojito', 'Gin & Tonic', 'Moscow Mule', 'Dark & Stormy', 'Vodka Juice', 'Aperol']
 
 	let record = undefined
 	let chosenDrink: string
