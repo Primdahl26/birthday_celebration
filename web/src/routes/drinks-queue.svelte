@@ -38,7 +38,7 @@
 		<table class="table table-zebra w-full">
 			<thead>
 				<tr>
-					<th>
+					<td>
 						<div class="flex flex-row gap-2 place-items-center">
 							<button
 								on:click={() => {
@@ -61,7 +61,7 @@
 							</button>
 							<h1 class="text-xl">{orders.length}</h1>
 						</div>
-					</th>
+					</td>
 					<th>Navn</th>
 					<th>Drink</th>
 				</tr>
