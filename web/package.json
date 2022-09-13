@@ -36,7 +36,8 @@
 	"type": "module",
 	"dependencies": {
 		"@macfja/svelte-persistent-store": "1.2.0",
-		"daisyui": "^2.24.0",
+		"daisyui": "^2.27.0",
+		"date-picker-svelte": "^2.2.0",
 		"pocketbase": "^0.4.1",
 		"svelte-gestures": "^1.4.1",
 		"svelte-inview": "^3.0.1",
