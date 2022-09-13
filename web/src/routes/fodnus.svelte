@@ -41,7 +41,7 @@
 </script>
 
 <svelte:head>
-	<title>Camillas fodnus bestillinger 🦶</title>
+	<title>Fodnus bestillinger 🦶</title>
 </svelte:head>
 
 {#if authendicated}
@@ -54,7 +54,7 @@
 		<table class="table table-zebra w-full">
 			<thead>
 				<tr>
-					<th>
+					<td>
 						<div class="flex flex-row gap-2 place-items-center">
 							<button
 								on:click={() => {
@@ -77,7 +77,7 @@
 							</button>
 							<h1 class="text-xl">{orders.length}</h1>
 						</div>
-					</th>
+					</td>
 					<th>Tidspunkt</th>
 					<th>Beskrivelse</th>
 					<th>Varighed</th>
@@ -151,7 +151,7 @@
 		</table>
 	</div>
 	<div class="flex justify-center py-5">
-		<p>Total fodnustid klaret: {totalTime} minutter</p>
+		<p>Tid givet fodnus: {totalTime} minutter</p>
 	</div>
 	<div class="flex justify-center pb-5">
 		<button
